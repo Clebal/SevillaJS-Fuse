@@ -1,0 +1,5 @@
+<ux:Resources>
+    <float4 ux:Global="StatusBarBackground" ux:Value="#121a3a"/>
+    <float4 ux:Global="AppBackground" ux:Value="#202c60"/>
+    <float4 ux:Global="TitleColor" ux:Value="#ffffff"/>
+</ux:Resources>

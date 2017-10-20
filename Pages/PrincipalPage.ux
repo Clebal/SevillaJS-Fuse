@@ -1,0 +1,39 @@
+<Page ux:Class="PrincipalPage" Color="AppBackground" Transition="None">
+
+  <Router ux:Dependency="router"/>
+
+  <Qreader ux:Global="Qreader"/>
+
+  <JavaScript File="PrincipalPage.js"></JavaScript>
+
+  <Video Opacity="0.3" File="../Assets/bg.mp4" IsLooping="true" StretchMode="UniformToFill" AutoPlay="true" Layer="Background">
+    <Blur/>
+  </Video>
+
+  <ClientPanel>
+
+    <Panel Dock="Top" Height="100">
+
+      <Image Margin="0,10,0,0" Url="http://asummerstory.com/wp-content/uploads/2017/09/210.png"/>
+
+    </Panel>
+
+    <Panel Alignment="Center">
+
+      <DockPanel>
+
+        <QRButton ux:Name="scan" Text="Escanea tu ticket" Clicked="{load}" Alignment="Center"></MyButton>
+
+      </DockPanel>
+
+    </Panel>
+
+    <Panel Dock="Bottom" Height="75">
+
+      <Text FontSize="10" Alignment="Center" Color="White">Creado por Sergio Clebal</Text>
+
+    </Panel>
+
+  </ClientPanel>
+
+</Page>

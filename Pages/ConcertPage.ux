@@ -1,0 +1,104 @@
+<Page ux:Class="ConcertPage">
+
+  <Router ux:Dependency="router"/>
+
+  <JavaScript File="ConcertPage.js"/>
+
+  <DockPanel ux:Name="CommentSendBox" Visibility="Collapsed" Opacity="0" IsFocusable="true" Color="#fff" Height="50" Width="92%">
+    <TextInput Margin="7.5,0" Value="{inputComment}" ux:Name="myInput" Focus.Delegate="CommentSendBox"/>
+    <Panel ux:Name="SendButton" Dock="Right" Color="#0089FF">
+      <Text Value="Enviar" Alignment="Center" Margin="6,0" Color="#fff"/>
+      <Clicked>
+        <Callback Handler="{regComment}" />
+        <GiveFocus />
+        <Change SendButton.Color="#0059FF" Easing="Linear" Duration="0.25" />
+        <Scale Factor="0.98" />
+      </Clicked>
+    </Panel>
+    <Shadow/>
+  </DockPanel>
+
+  <DockPanel ux:Name="Daddy">
+
+    <Blur ux:Name="DaddyBlur" Radius="0"/>
+
+    <Panel ux:Name="Header" Height="250" Dock="Top">
+
+      <Rectangle Height="150" Alignment="Top">
+        <LinearGradient AngleDegrees="270">
+          <GradientStop Offset="0.3" Color="#ffffff00 * (0,0,0,0)"/>
+          <GradientStop Offset="1" Color="#00000099"/>
+        </LinearGradient>
+      </Rectangle>
+
+      <Image Layer="Overlay" File="../Assets/arrow_left.png" Height="35" Alignment="TopLeft" Margin="15,25,15,15">
+        <Shadow Mode="PerPixel"/>
+        <Clicked Handler="{goBack}" />
+      </Image>
+
+      <ImageFill StretchMode="UniformToFill" MemoryPolicy="UnloadUnused">
+        <HttpImageSource Url="{item.imagen}"/>
+      </ImageFill>
+
+    </Panel>
+
+    <ScrollView>
+
+      <ScrollingAnimation From="0" To="-50">
+        <Change Header.Height="270"/>
+      </ScrollingAnimation>
+      <ScrollingAnimation From="0" To="300">
+        <Change Header.Height="100"/>
+      </ScrollingAnimation>
+
+      <StackPanel Dock="Fill" Margin="20">
+
+        <ConcertText>Artista</ConcertText>
+        <Text FontSize="18" Margin="0,0,0,20">{item.artista}</Text>
+
+        <ConcertText>Día y Hora</ConcertText>
+        <Text FontSize="18" Margin="0,0,0,20">{item.fechahora}</Text>
+
+        <ConcertText>Información</ConcertText>
+        <Text FontSize="18" Margin="0,0,0,20">Lorem ipsum dolor sit amet</Text>
+
+        <Separator/>
+
+        <SectionText Margin="0,5,0,0" Alignment="TopLeft">Comentarios</SectionText>
+
+        <Each Items="{comments}">
+
+          <Comment/>
+
+        </Each>
+
+        <Rectangle CornerRadius="20" Width="95%" Height="50" Color="#dddddd33" Margin="0,20,0,0">
+
+          <Text Alignment="CenterLeft" Color="#0008" Margin="20,0,0,0">Enviar Comentario...</Text>
+          <Stroke Color="#00B9FF" Width="2"/>
+
+          <WhilePressed>
+            <Scale Factor="0.99" Duration="0.1" Easing="Linear"/>
+          </WhilePressed>
+
+          <Clicked>
+            <GiveFocus Target="myInput"/>
+          </Clicked>
+
+        </Rectangle>
+
+        <WhileKeyboardVisible>
+          <Change CommentSendBox.Opacity="1"/>
+          <Change CommentSendBox.Visibility="Visible"/>
+          <Change Daddy.Opacity="0.3" Duration="0.25" Easing="Linear"/>
+        </WhileKeyboardVisible>
+
+      </StackPanel>
+
+    </ScrollView>
+
+    <BottomBarBackground Dock="Bottom"/>
+
+  </DockPanel>
+
+</Page>

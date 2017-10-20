@@ -1,0 +1,12 @@
+<ux:Resources>
+
+  <Font ux:Global="RobotoBold" File="../Assets/Fonts/Roboto/Roboto-Bold.ttf"/>
+  <Font ux:Global="RobotoLight" File="../Assets/Fonts/Roboto/Roboto-Light.ttf"/>
+
+  <Text ux:Class="SectionText" Font="RobotoLight" FontSize="20" Alignment="Center" Color="Black"/>
+
+  <Text ux:Class="TitleText" Font="RobotoBold" FontSize="30" Alignment="Center" Color="TitleColor"/>
+
+  <Text ux:Class="ConcertText" Font="RobotoLight" FontSize="27" Color="#00bbff"/>
+
+</ux:Resources>

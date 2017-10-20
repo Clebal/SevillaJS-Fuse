@@ -1,0 +1,18 @@
+<App>
+
+  <Router ux:Name="router"/>
+
+  <JavaScript>
+
+  var Backend = require("JS/Backend");
+
+  Backend.check(router);
+
+  </JavaScript>
+
+  <Navigator DefaultPath="concerts">
+    <PrincipalPage ux:Template="principal" router="router"/>
+    <ConcertsPage ux:Template="concerts" router="router"/>
+  </Navigator>
+
+</App>

@@ -1,0 +1,23 @@
+{
+  "RootNamespace": "",
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "Includes": [
+    "*",
+    "Assets/*:Bundle",
+    "JS/*:Bundle"
+  ],
+  "Projects": [
+    "fuse_modules/zean00/fuse-qreader/fuse-qreader.unoproj"
+  ],
+  "Excludes": [
+    "fuse_modules/"
+  ],
+  "FusePM": {
+    "Dependencies": [
+      "https://github.com/zean00/fuse-qreader"
+    ]
+  }
+}

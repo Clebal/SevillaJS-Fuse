@@ -1,0 +1,31 @@
+<Panel ux:Class="ConcertItem" Background="#ddd">
+
+  <Clicked Handler="{goItem}" />
+
+  <WhilePressed>
+    <Scale Factor="0.99" Duration="0.1" Easing="Linear" />
+  </WhilePressed>
+
+  <Image Url="{imagen}" Visibility="Hidden"/>
+
+  <Panel Layer="Background">
+    <LinearGradient AngleDegrees="90">
+      <GradientStop Offset="0" Color="#ffffff00 * (0,0,0,0)"/>
+      <GradientStop Offset="1.5" Color="#00000099"/>
+    </LinearGradient>
+  </Panel>
+
+  <Rectangle Layer="Background">
+
+    <ImageFill Url="{imagen}" StretchMode="UniformToFill"/>
+
+  </Rectangle>
+
+  <Text Color="White" Alignment="BottomLeft" Margin="10" FontSize="25" Value="{artista}">
+    <Shadow Mode="PerPixel"/>
+  </Text>
+
+  <Shadow/>
+
+
+</Panel>
